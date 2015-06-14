@@ -1,0 +1,370 @@
+/* Main */
+.companyNameMain {
+  border-style: solid;
+  border-color: white;
+  width:35%;
+  height: 150px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:-70px;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-family:'Josefin Sans',sans-serif;
+}
+
+p{
+  font-family:'Josefin Sans',sans-serif;
+}
+
+.companyNameMain a {
+  text-decoration: none;
+  color: white;
+  font-size: 70px;
+}
+
+.companyName a{
+  text-decoration: none;
+  color: #33CCFF;
+  font-size: 40px;
+}
+
+.space-div{
+height:10px;
+}
+
+.space-div-top{
+height:80px;
+
+}
+
+.companyName{
+  border-style: solid;
+  border-color: #33CCFF;
+  width: 250px;
+  height: 50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.companyNameMain h1 {
+  margin-top: 30px;
+  font-family: 'Righteous', cursive;
+}
+
+.companyName h1{
+  font-family: 'Righteous', cursive;
+  margin-top:-5px;
+}
+
+.create-top{
+  margin-top:180px;
+  border:1px solid #ffffff;
+  width:150px;
+  margin-left:auto;
+  margin-right:auto;
+  font-family:'Josefin Sans',sans-serif;
+  -webkit-transition:background-color .5s;
+    transition: background-color .5s;
+}
+
+.create-top a{
+    text-decoration:none;
+    color:white;
+    font-weight:normal;
+}
+
+.create-top:hover{
+    background-color:#ff959c;  
+    color:black;  
+}
+
+
+.containerLogoMain {
+  height: 500px;
+  width: 100%;
+  background-color: #F5CDC3;
+  background-image:url("/assets/background-lettergram.jpg");
+}
+
+.containerLogo {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+}
+
+
+
+body {
+  font-family: 'Josefin Sans',sans-serif;
+  color: #33CCFF;
+  text-align: center;
+}
+
+.container{
+  font-family:'Josefin Sans',sans-serif;
+
+}
+
+.container h1 {
+  border-style: solid;
+  border-color: #33CCFF;
+  margin: 10px 30% 10px 30%;
+}
+
+.container h3 a {
+  text-decoration: underline;
+  color: #33CCFE;
+  font-weight:none;
+}
+
+.container ol{
+    margin-left:-20px;
+
+}
+
+.container li{
+    font-size:20px;
+
+}
+/* Links */
+
+.userStatus {
+  text-align: right;
+  margin-top:-92px;
+  font-family:'Josefin Sans',sans-serif;
+ }
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.userStatus a {
+  text-decoration: none;
+  color: white;
+  font-weight:normal;
+  text-align:center;
+  background-color:#ff959c;
+}
+
+.userStatus a:hover {
+
+}
+
+.userStatus ul{
+    list-style-type:none;
+}
+
+
+.userStatus li{
+    background-color:#ff959c;
+    float:left;
+    color:white;
+    border:1px solid white;
+    position:relative;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+}
+
+.userStatus>ul>li{
+    width:75px;
+    font-size:20px;
+    text-align:center;
+}
+
+.userStatus>ul>a>li{
+    width:75px;
+    text-align:center;
+    font-size:20px;
+}
+
+.userStatus>ul>li>ul>a{
+    position:relative;
+    font-size:18px;
+
+}
+
+
+.userStatus>ul>li>ul{
+    position:absolute;
+    visibility:hidden;
+    z-index=1;
+    opacity:0;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+}
+
+.userStatus>ul>li>ul>li{
+    width:100%;
+    text-align:center;
+
+}
+
+
+.userStatus>ul>li:hover>ul {
+    opacity: 1;
+	visibility:visible;
+	display:block;
+	margin-left:-41px;
+	max-width:100%;
+	
+}
+
+.userStatus li:hover{
+    background-color:#ff959c;
+        border:1px solid black;
+}
+
+.userStatusFront {
+  text-align: right;
+  margin-top:-170px;
+  font-family:'Josefin Sans',sans-serif;
+  margin-left:65%;
+}
+
+.userStatusFront a {
+  text-decoration: none;
+  color: white;
+  font-weight:normal;
+  text-align:center;
+}
+
+.userStatusFront a:hover {
+
+}
+
+.userStatusFront ul{
+    list-style-type:none;
+}
+
+.userStatusFront li{
+    float:left;
+    color:white;
+    border:1px solid white;
+    position:relative;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+}
+
+.userStatusFront>ul>li{
+    width:75px;
+    font-size:20px;
+    text-align:center;
+}
+
+.userStatusFront>ul>a>li{
+    width:75px;
+    text-align:center;
+    font-size:20px;
+}
+
+.userStatusFront>ul>li>ul>li{
+    position:relative;
+    font-size:18px;
+
+}
+
+.left-list-item{
+border-top-left-radius:10px;
+border-bottom-left-radius:10px;
+
+}
+
+.right-list-item{
+border-top-right-radius:10px;
+border-bottom-right-radius:10px;
+
+}
+
+.userStatusFront>ul>li>ul{
+    position:absolute;
+    visibility:hidden;
+    opacity:0;
+    z-index=1;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+}
+
+.userStatusFront>ul>li>ul>li{
+    width:100%;
+    text-align:center;
+
+}
+
+
+.userStatusFront>ul>li:hover>ul {
+    opacity: 1;
+	visibility:visible;
+	display:block;
+	margin-left:-41px;
+	max-width:100%;
+	
+}
+
+.userStatusFront li:hover{
+    background-color:#ff959c;
+}
+
+
+/* Flash Message */
+.errorMessage .error, .flashMessage{
+  margin: 5px 30%;
+  background-color: black;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Steps */
+.steps {
+  border-style: solid;
+  border-color: #33CCFF;
+  width: 400px;
+  height: 50px;
+  font-size: 12px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

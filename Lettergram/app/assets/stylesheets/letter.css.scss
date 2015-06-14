@@ -1,0 +1,48 @@
+// Place all the styles related to the letter controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.step1{
+width:35%;
+  height: 150px;
+  margin-left:auto;
+  margin-right:auto;
+ }
+
+.image{
+    max-width: 500px;
+    max-height: 300px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.image:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+td{
+	padding-left:50px;
+	padding-right:50px;
+
+}
+
+
+#browse{
+	margin-left:auto;
+    margin-right:auto;
+    position: relative;
+	bottom: -40px;
+	left: -200px;
+}
+
+#design{
+	margin-left:auto;
+    margin-right:auto;
+	position: relative;
+	bottom: -20px;
+	left: 290px;
+}
+.space-div{
+	height:80px;
+}

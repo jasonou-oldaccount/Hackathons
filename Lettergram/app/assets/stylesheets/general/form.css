@@ -1,0 +1,8 @@
+.error_messages {
+  background-color: red;
+  font-size: 16px;
+  color: #fff;
+  margin: 5px 30%;
+  font-style: italic;
+  list-style-type: none;
+}

@@ -1,0 +1,53 @@
+<div class="containerLogo">
+<div class="space-div-top"></div>
+<div class="companyName"><h1><%= link_to 'lettergram', root_url %></h1></div>
+</div>
+<div class="userStatus">
+<ul>
+    <li><a href="#">Account</a>
+        <ul>
+            <% if current_user %>
+                <li style="font-size:16px;">Logged in as <%= current_user.name %>.</li>
+                <li><%= link_to "Log Out", session_path("current"), method: 'delete' %></li>
+            <% else %>
+                <li><%= link_to "Log In", login_path %></li>
+                <li><%= link_to "Sign Up", signup_path %></li>
+            <% end %>
+        </ul>
+    </li>
+    <a href="#"><li>About</li></a>
+    <li><a href="#">Products</a>
+        <ul>
+            <li><%= link_to "Choose from a template", step_two_gallery_path%></li>
+            <li><%= link_to "Design your Own", step_two_design_path%></li>
+        </ul>
+    </li>
+    <a href="#"><li>Contact</li></a>
+</ul> 
+</div>
+
+<div class="steps" ><h1>Step one: Choose an option.</h1></div>
+
+
+
+<table align="center" style="margin-top:40px;">
+	<tr>
+		<td>
+			<div id="left" class="image">
+        <%= link_to image_tag("cardimages/left.jpg"), step_two_gallery_path%>
+			</div>
+		</td>
+		<td>
+			<div id="right" class="letterimage">
+				<%= link_to image_tag("cardimages/right.jpg"), step_two_design_path%>
+			</div>
+		</td>
+</tr> 
+<table>
+<div class="space-div"></div>
+<div class="optionGallery" id="browse"><%= link_to 'Browse Gallery', step_two_gallery_path %></div>
+<div class="optionDesign" id="design"><%= link_to 'Design My Own!', step_two_design_path %></div>
+
+
+
+

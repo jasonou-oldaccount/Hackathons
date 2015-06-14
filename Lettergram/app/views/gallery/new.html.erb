@@ -1,0 +1,74 @@
+<div class="containerLogo">
+<div class="companyName"><h1><%= link_to 'LETTERGRAM', root_url %></h1></div>
+<div class="userStatus">
+<% if current_user %>
+  Logged in as <%= current_user.name %>.
+  <%= link_to "Log Out", session_path("current"), method: 'delete' %>
+<% else %>
+  <%= link_to "Log In", login_path %>
+  <%= link_to "Sign Up", signup_path %>
+<% end %>
+</div>
+</div>
+<div class="steps"><h1>Step two: Choose a card.</h1></div>
+<h1>Gallery#new</h1>
+<p>Find me in app/views/gallery/new.html.erb</p>
+
+<center>
+<table>
+    <tr>
+        <td>
+            <div id="img_box" class="letterimage" value="elephant" onclick="pop('Elephante', 'cardimages/elephante.jpg')">
+               <%= image_tag("cardimages/elephante.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Flower', 'cardimages/flower.jpg')">
+                <%= image_tag("cardimages/flower.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Girafa', 'cardimages/girafa.jpg')">
+                <%= image_tag("cardimages/girafa.jpg")%>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Hello Blue', 'cardimages/helloblue.jpg')">
+                <%= image_tag("cardimages/helloblue.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('London', 'cardimages/london.jpg')">
+                <%= image_tag("cardimages/london.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Oranges', 'cardimages/oranges.jpg')">
+                <%= image_tag("cardimages/oranges.jpg")%>
+            </div>
+        </td>       
+    </tr>
+    <tr>
+        <td> 
+            <div id="img_box" class="letterimage" onclick="pop('Sansebastian', 'cardimages/sansebastian.jpg')">
+                <%= image_tag("cardimages/sansebastian.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Thank You Poppy', 'cardimages/thankyoupoppy.jpg')">
+                <%= image_tag("cardimages/thankyoupoppy.jpg")%>
+            </div>
+        </td>
+        <td>
+            <div id="img_box" class="letterimage" onclick="pop('Thank You Turquoise', 'cardimages/thankyouturquoise.jpg')">
+                <%= image_tag("cardimages/thankyouturquoise.jpg")%>
+            </div>
+        </td>       
+    </tr>
+</table>
+
+</center>
+<div class="optionMessage"><%= link_to 'Add A Message', step_three_path %></div>
+

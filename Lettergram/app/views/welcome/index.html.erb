@@ -1,0 +1,55 @@
+<div class="containerLogoMain">
+<div class="space-div"></div>
+<div class="companyNameMain"><h1><%= link_to 'lettergram', root_url %></h1></div>
+<div class="userStatusFront">
+<ul>
+    <li><a href="#">Account</a>
+        <ul>
+            <% if current_user %>
+                <li style="font-size:16px;">Logged in as <%= current_user.name %>.</li>
+                <li><%= link_to "Log Out", session_path("current"), method: 'delete' %></li>
+            <% else %>
+                <li><%= link_to "Log In", login_path %></li>
+                <li><%= link_to "Sign Up", signup_path %></li>
+            <% end %>
+        </ul>
+    </li>
+    <a href="#"><li>About</li></a>
+    <li><a href="#">Products</a>
+        <ul>
+            <li><%= link_to "Choose from a template", step_two_gallery_path%></li>
+            <li><%= link_to "Design your Own", step_two_design_path%></li>
+        </ul>
+    </li>
+    <a href="#"><li>Contact</li></a>
+</ul>  
+
+</div>
+  <h3 class="create-top" align="center"><%= link_to 'send a letter now', step_one_path %></h3>
+</div>
+
+<div class="flashMessage">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
+</div>
+
+<div class="container">
+    <h1>How it works:</h1>
+    <ol align="center">
+        <li>Pick a Card</li>
+        <li>Pick a Font</li>
+        <li>Write a Message</li>
+        <li>Pay for postage</li>
+        <li>That's it!</li>
+    </ol>
+    <table align="center">
+        <tr>
+            <td><%= image_tag("twitter4.jpg")%></td>
+            <td><%= image_tag("fb.jpg")%></td>
+            <td><%= image_tag("insta3.jpg")%></td>
+        </tr>
+    </table>
+    
+ <!-- <h3><%= link_to 'Create a Lettergram', step_one_path %></h3>-->
+</div>

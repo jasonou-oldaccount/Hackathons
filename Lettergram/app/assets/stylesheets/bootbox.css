@@ -1,0 +1,12 @@
+/*found at: http://stackoverflow.com/questions/14919862/how-to-set-twitter-bootstrap-modal-more-wider-and-higher*/
+@media (min-width: 10000px)
+.modal-lg
+{
+    width: 10000px;
+    height: 10000px; /* control height here */
+}
+
+.modal-dialog
+{
+  width: 1px;/* your width */
+}
