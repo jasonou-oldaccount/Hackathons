@@ -1,0 +1,147 @@
+<div class="container">
+    
+    <div style="font-size: 30px; padding-top: 1%;">
+        <p data-ng-show="round < 4">ROUND {{ round + 1}}</p>
+        <p data-ng-show="round == 4">GAME OVER</p>
+        <div class="progress" data-ng-show="round < 4">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+            aria-valuenow="{{ counter * 10 }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ counter * 10 }}%">
+            {{ counter }} Seconds
+            </div>
+        </div>
+        
+        <div class="progress" data-ng-show="round == 4">
+            <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"
+            aria-valuenow="{{ counter * 10 }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ counter * 10 }}%">
+            <temp data-ng-show="winner1 > 0">Winner Player One</temp><temp data-ng-show="winner2 > 0">Winner Player Two</temp><temp data-ng-show="winner1 == 0 && winner2 == 0">Tied Battle</temp>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-5">
+            <div class="alert" data-ng-class="{ 'alert-info': winner1 == 0, 'alert-danger': winner1 < 0, 'alert-success': winner1 > 0}">
+                <h3><strong>{{ name1 }}</strong> of <strong>{{ school1 }}</strong></h3>
+            </div>
+            <hr>
+            <maleleft data-ng-show="gender1 == 'male' && maleattack1 == 0"></maleleft><femaleleft data-ng-show="gender1 == 'female' && femaleattack1 == 0"></femaleleft>
+            <malelefthit data-ng-show="gender1 == 'male' && maleattack1 == 1"></malelefthit><femalelefthit data-ng-show="gender1 == 'female' && femaleattack1 == 1"></femalelefthit>
+            
+            <hr>
+            
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+                aria-valuenow="{{ hp1 }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ hp1 }}%">
+                    {{ hp1 }}%
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-danger">HP : {{ hp1 }} / 100</button>
+            <button type="button" class="btn btn-warning">SCORE : {{ player1 }}</button>
+            
+            <hr>
+            
+            <div  data-ng-show="round < 4">
+                <a href="" class="list-group-item active">
+                    <h4 class="list-group-item-heading ">Question {{ round + 1 }}</h4>
+                    <p class="list-group-item-text">
+                        {{ getQuestion(round) }}
+                    </p>
+                </a>
+                <a href="" class="list-group-item" ng-repeat="choice in multiplechoice">
+                    <h4 class="list-group-item-heading ">Answer {{ $index + 1 }}</h4>
+                    <p class="list-group-item-text" data-ng-click="checkAnswer1(round, choice.id)">
+                        {{ choice.ans }}
+                    </p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-md-2">
+            <h3>VS.</h3>
+        </div>
+        
+        <div class="col-md-5">
+            <div class="alert" data-ng-class="{ 'alert-info': winner2 == 0, 'alert-danger': winner2 < 0, 'alert-success': winner2 > 0}">
+                <h3><strong>{{ name2 }}</strong> of <strong>{{ school2 }}</strong></h3>
+            </div>
+            <hr>
+            <maleright data-ng-show="gender2 == 'male' && maleattack2 == 0"></maleright><femaleright data-ng-show="gender2 == 'female' && femaleattack2 == 0"></femaleright>
+            <malerighthit data-ng-show="gender2 == 'male' && maleattack2 == 1"></malerighthit><femalerighthit data-ng-show="gender2 == 'female' && femaleattack2 == 1"></femalerighthit>
+            
+            <hr>
+            
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+                aria-valuenow="{{ hp }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ hp }}%">
+                    {{ hp }}%
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-danger">HP : {{ hp }} / 100</button>
+            <button type="button" class="btn btn-warning">SCORE : {{ player2 }}</button>
+            
+            <hr>
+            
+            <div  data-ng-show="round < 4">
+                <a href="" class="list-group-item active">
+                    <h4 class="list-group-item-heading ">Question {{ round + 1 }}</h4>
+                    <p class="list-group-item-text">
+                        {{ getQuestion(round) }}
+                    </p>
+                </a>
+                <a href="" class="list-group-item" ng-repeat="choice in multiplechoice">
+                    <h4 class="list-group-item-heading " >Answer {{ $index + 1 }}</h4>
+                    <p class="list-group-item-text" data-ng-click="checkAnswer(round, choice.id)">
+                        {{ choice.ans }}
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#scoresModal"  data-ng-show="round == 4">Battle Scores</button>
+    <button type="button" class="btn btn-success btn-lg" data-ng-show="round == 4"><a href="#/" style="text-decoration: none; color:white;" >Restart</a></button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="scoresModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title"><strong>BattlEDU</strong></h3>
+                    <h3><small>Battle Scores</small></h3>
+                </div>
+                <div class="modal-body" style="height: 40%;">
+                    <div class="first-column"  style="width: 50%;float: left;">
+                        <H4><strong>Player One</strong></H4>
+                        <div ng-repeat="name in fights">
+                            <hr>
+                            <h4>{{ name.name1 }} : {{ name.score1 }}</h4>
+                        </div>
+                    </div>
+
+                    <div class="second-column style="width: 50%;float: right;"">
+                        <h4><strong>Player Two</strong></h4>
+                        <div ng-repeat="name in fights">
+                            <hr>
+                            <h4>{{ name.name2 }} : {{ name.score2 }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <shortcut></shortcut>
+    
+</div>
+
+<audio autoplay="true" loop="true" src="../audio/BattlEDU-sound.m4a.m4a" style="display:none;">

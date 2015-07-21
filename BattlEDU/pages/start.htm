@@ -1,0 +1,50 @@
+<div class="container" style="padding: 10%;">
+    <h2>Welcome to <strong>BattlEDU</strong></h2>
+    <h2><small>Where Procrastination and Education Come Together</small></h2>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Start a New Game</button>
+    <hr>
+    <button type="button" class="btn btn-success btn-sm"><a href="#/game" style="text-decoration: none; color:white;">Begin Game</a></button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title"><strong>BattlEDU</strong></h3>
+                    <h3><small>Character Creation</small></h3>
+                </div>
+                <div class="modal-body" style="height: 40%;">
+                    <div class="first-column"  style="width: 50%;float: left;">
+                        <H4><strong>Player One</strong></H4>
+                        <hr>
+                        <h4>Controls : A S D F</h4>
+                        <hr>
+                        <input type="text" placeholder="Character Name" data-ng-model="name1">
+                        <hr>
+                        <input type="text" placeholder="School i.e. UCSC" data-ng-model="school1">
+                        <hr>
+                        <input type="text" placeholder="male or female" data-ng-model="gender1">
+                    </div>
+
+                    <div class="second-column style="width: 50%;float: right;"">
+                        <h4><strong>Player Two</strong></h4>
+                        <hr>
+                        <h4>Controls : H J K L</h4>
+                        <hr>
+                        <input type="text" placeholder="Character Name" data-ng-model="name2">
+                        <hr>
+                        <input type="text" placeholder="School i.e. UCSC" data-ng-model="school2">
+                        <hr>
+                        <input type="text" placeholder="male or female" data-ng-model="gender2">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
