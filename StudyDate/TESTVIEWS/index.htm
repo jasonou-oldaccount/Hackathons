@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>study-date</title>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script src="other_files/custom.js"></script>
+        <link rel="stylesheet" href="other_files/custom.css">
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Study-Date</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+                    <div class="nav navbar-nav navbar-right">
+                        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Post <i class="fa fa-plus"></i></button>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <h4 class="modal-title">Post New Study Session</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-university"></i></span>
+                            <select class="form-control">
+                                <option value="one">CS101</option>
+                                <option value="two">CS102</option>
+                                <option value="three">CS103</option>
+                                <option value="four">CS104</option>
+                                <option value="five">CS105</option>
+                            </select>
+                        </div>
+
+                        <br>
+                        
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-users"></i></span>
+                                        <select class="form-control">
+                                            <option value="one">Study Session</option>
+                                            <option value="two">Notes</option>
+                                            <option value="three">Announcements</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="#People">
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-location-arrow"></i></span>
+                            <input type="text" class="form-control" placeholder="Location" aria-describedby="basic-addon1">
+                        </div>
+
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" placeholder="Date" aria-describedby="basic-addon1">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-clock-o"></i></span>
+                                    <input type="text" class="form-control" placeholder="Time" aria-describedby="basic-addon1">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <h4 class="modal-title">Edit Current Session</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+
+                        <br>
+                        
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-users"></i></span>
+                                        <input type="text" class="form-control" placeholder="#People">
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-location-arrow"></i></span>
+                            <input type="text" class="form-control" placeholder="Location" aria-describedby="basic-addon1">
+                        </div>
+
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" placeholder="Date" aria-describedby="basic-addon1">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                            
+                        </div><!-- /.row -->
+                    
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 hash-categories" id="left">
+                <ul class="list-group">
+                    <div class="list-group-item">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" placeholder="#" class="form-control"><br>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <button type="submit" class="btn btn-default">Add Class</button>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" placeholder="#" class="form-control"><br>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <button type="submit" class="btn btn-default">Search</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">#CS101SCHOOL</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103PH</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103HACK</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS104PIAZZA</a></li><br>
+                    <li class="list-group-item"><a href="#">#PIAZZAHACKATHON</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS101SCHOOL</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103PH</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103HACK</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS104PIAZZA</a></li><br>
+                    <li class="list-group-item"><a href="#">#PIAZZAHACKATHON</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS101SCHOOL</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103PH</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103HACK</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS104PIAZZA</a></li><br>
+                    <li class="list-group-item"><a href="#">#PIAZZAHACKATHON</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS101SCHOOL</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103PH</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103HACK</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS104PIAZZA</a></li><br>
+                    <li class="list-group-item"><a href="#">#PIAZZAHACKATHON</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS101SCHOOL</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103PH</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS103HACK</a></li><br>
+                    <li class="list-group-item"><a href="#">#CS104PIAZZA</a></li><br>
+                    <li class="list-group-item"><a href="#">#PIAZZAHACKATHON</a></li><br>
+                </ul>
+            </div>
+            
+            <div class="col-lg-9 col-md-9 col-sm-9" id="right">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Study</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Notes</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Announcements</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="menu1" class="tab-pane fade">
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#STUDY<span class="pull-right"><a href="#"><i class="fa fa-2x fa-users"></i></a><a href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="menu2" class="tab-pane fade">
+                        <br>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">#ANNOUNCEMENTS<span class="pull-right"><a href="#">edit</a></span></div>
+
+                            <!-- List group -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                                <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                                <li class="list-group-item"><i class="fa fa-clock-o"></i> Time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

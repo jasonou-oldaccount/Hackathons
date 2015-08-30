@@ -1,0 +1,259 @@
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Study-Date</a>
+<!--             <span class="pull-center" id="school">{{user.organization}}</span> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--             <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form> -->
+            
+            
+           
+            
+            
+            <div class="nav navbar-nav navbar-right">
+                <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">Post <i class="fa fa-plus"></i></button>
+                
+            <div class="btn-group">
+            <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> {{ user.name }} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#"> {{ user.email }} </a></li>
+                <li><a href="#"> {{ user.organization }}</a></li>
+                <li><a href="#"> Settings </a></li>
+                <li class="divider"></li>
+                <li><a href ng-click="logout()">Logout</a></li>
+            </ul>
+        </div>
+                
+            </div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                <h4 class="modal-title">Post New {{type}}</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-university"></i></span>
+                    <select class="form-control" ng-model= "c" >
+                        <option value="{{course}}" ng-repeat="course in courses">{{course.name}}</option>
+                    </select>
+
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-users"></i></span>
+                            <select class="form-control" ng-model="taskType" ng-init="taskType='Study Session'">
+                                <option value="Study Session" selected>Study Session</option>
+                                <option value="Notes">Notes</option>
+                                <option value="Announcements">Announcements</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-show="taskType=='Study Session'">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="#People" ng-model="max_number_people">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="input-group" ng-show="taskType=='Study Session'">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-location-arrow"></i></span>
+                    <input type="text" class="form-control" placeholder="Location" aria-describedby="basic-addon1" ng-model="studyLocation">
+                </div>
+
+                <div class="input-group" ng-hide="taskType=='Study Session'">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-pencil"></i></span>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+
+                <br>
+
+                <div class="row" ng-show="taskType=='Study Session'">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control" placeholder="Date" aria-describedby="basic-addon1" ng-model="date">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+
+    
+                </div><!-- /.row -->
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="createSession()">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <h4 class="modal-title">Edit Current Session</h4>
+                        {{currentCourse.session}}
+                    </div>
+                    
+                    <div class="modal-body">
+
+                        <br>
+                        
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-users"></i></span>
+                                        <input type="text" class="form-control" placeholder="#People" ng-model="currentSession.max_number_people" ng-init="currentSession.max_number_people">
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <br>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-location-arrow"></i></span>
+                            <input type="text" class="form-control" placeholder="Location" aria-describedby="basic-addon1" ng-model="currentSession.location">
+                        </div>
+
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" placeholder="Date" aria-describedby="basic-addon1" ng-model="currentSession.date">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                            
+                        </div><!-- /.row -->
+                    
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="updateSession(currentSession)">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 hash-categories">
+      <ul class="list-group">
+          <li class="list-group-item">
+              <input type="text" placeholder="#" class="form-control" id="newCourse" ng-model="newCourse">
+              <button class="btn btn-default" ng-click="createCourse()">Add Class</button>
+          </li>
+      </ul>
+
+
+      <ul class="list-group" ng-repeat="course in courses">
+          <li class="list-group-item"><a ng-click="setCurrentCourse(course)">#{{course.name | uppercase}}</a></li>
+      </ul>
+    </div>
+    
+    <div class="col-lg-9 col-md-9 col-sm-9">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Study</a></li>
+            <li><a data-toggle="tab" href="#menu1">Notes</a></li>
+            <li><a data-toggle="tab" href="#menu2">Announcements</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <br>
+                <div class="panel panel-default" ng-repeat="session in currentCourse.sessions">
+                    <!-- Default panel contents -->
+                    
+                    <div class="panel-heading">{{session.participants[0] }} is looking for {{session.max_number_people - session.participants.length}} <span ng-hide="(session.max_number_people-session.participants.length)==1">people</span> <span ng-show="(session.max_number_people-session.participants.length)==1">person</span> <span class="pull-right"><a ng-hide="(session.max_number_people-session.participants.length)==0" ng-click="addParticipant(session)" href="#"><i class="fa fa-2x fa-users"></i></a><a ng-hide="user.name!==session.participants[0]"href="#" data-toggle="modal" data-target="#editModal" ng-click="setCurrentSession(session)"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location: <a href ng-init="mapOpen=false" ng-click="mapOpen=!mapOpen">{{session.location}}</a>
+                        <!-- <iframe width="300" height="250" frameborder="0" style="border:0" ng-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBfHKqynzNrUgtayIrtdQ5s05jvpEd0y3k&q=Seattle" allowfullscreen>
+                        </iframe> -->
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{session.location}}&zoom=13&size=400x200&maptype=roadmap" ng-show="mapOpen">
+
+                        </li>
+                        <li class="list-group-item"><i class="fa fa-calendar"></i> Date: {{session.date | date:'short'}}</li>
+                        <li class="list-group-item"><i class="fa fa-users"></i>Participants: 
+                          <ul ng-repeat = "participant in session.participants"><li>{{participant}}</li></ul></li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div id="menu1" class="tab-pane fade">
+                <br>
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">#Notes<span class="pull-right"><a href="#" data-toggle="modal" data-target="#editModal" ng-click="setCurrentSession(session)"><i class="fa fa-2x fa-pencil-square-o"></i></a></span></div>
+
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fa fa-calendar"></i> Date: {{notes.date | date:'short'}}</li>
+                        <li class="list-group-item">{{notes.message}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="menu2" class="tab-pane fade">
+                <br>
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">#Announcements<span class="pull-right"><a href="#">join </a>/<button type="button" class="btn btn-link"> edit</button></span></div>
+
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fa fa-location-arrow"></i> Location</li>
+                        <li class="list-group-item"><i class="fa fa-calendar"></i> Date</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p> Created by: Ivan Barreto | Annie Chen | Peter Chim | Jason Ou </p>
+  </div>
+</footer>
