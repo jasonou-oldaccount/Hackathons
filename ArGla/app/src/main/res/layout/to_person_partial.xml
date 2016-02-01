@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/toPerson"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:id="@+id/userTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendInfo"
+        android:layout_below="@id/userTitle"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/userTo"
+            android:layout_marginLeft="15dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:hint="To: "/>
+
+        <EditText
+            android:id="@+id/userFeeling"
+            android:layout_width="230dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:hint="I'm feeling... "/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sendInfo"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/happyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Happy"
+            android:layout_toLeftOf="@+id/neutralButton"
+            android:background="@drawable/clear_button_when_actions"
+            android:textColor="#fff"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:id="@+id/neutralButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Neutral"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/clear_button_when_actions"
+            android:textColor="#fff"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/upsetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/neutralButton"
+            android:text="Upset"
+            android:background="@drawable/clear_button_when_actions"
+            android:textColor="#fff"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

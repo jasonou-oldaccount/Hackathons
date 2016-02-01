@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/toMe"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:id="@+id/chooseData"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/showGraph"
+            android:layout_marginRight="20dp"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:text="Line Graph"
+            android:background="@drawable/clear_button_when_actions"
+            android:onClick="showG"/>
+
+        <Button
+            android:id="@+id/showPie"
+            android:layout_marginLeft="20dp"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:text="Pie Chart"
+            android:background="@drawable/clear_button_when_actions"
+            android:onClick="showP"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_below="@id/chooseData"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_below="@id/chooseData"
+        android:id="@+id/mainLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_below="@id/chooseData"
+        android:id="@+id/mainLayout_2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_below="@id/chooseData"
+        android:id="@+id/mainLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible">
+    </FrameLayout>
+    
+    <LinearLayout
+        android:layout_below="@id/mainLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/list_view_partial_2" />
+
+    </LinearLayout>
+
+</RelativeLayout>

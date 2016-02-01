@@ -7,3 +7,5 @@ Hackathon Projects:
 - AngelHacks.SiliconValley.2015:BattlEDU (AngularJS web app game for connection students through competitive studying for the ultimate battle of the wits)
 
 - PiazzaHacks.PiazzaHQ.2015:StudyDate (AngularJS/MEAN Stack web app for students to create study groups, post class announcements, notes, and to connect with each other)
+
+- HackUCSC.UCSantaCruz.2016:ArGla (Android Application with Firebase backend empowering people around the world to connect with one another using emotions)
